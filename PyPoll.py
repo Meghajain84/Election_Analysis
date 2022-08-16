@@ -19,7 +19,8 @@ import os
 # Assign a variable for the file to load and the path.
 #file_to_load = 'C:\Users\MEGHA\Documents\Rutgers\Python\Election_Analysis\Resources\election_results.csv' is giving some error
 ##file_to_load = os.path.join("Resources", "election_results.csv") OR file_to_load = 'Resources\election_results.csv' is giving same error but different from above
-
+file_to_load = os.path.join("Resources", "election_results.csv") 
+file_to_write = os.path.join("analysis", "election_analysis.txt")
 # Open the election results and read the file.
 # election_data = open(file_to_load, 'r'), with this you need close() too
 
@@ -36,7 +37,8 @@ winning_count = 0
 winning_percentage = 0
 
 # Open the election results and read the file
-with open(r"C:\Users\MEGHA\Documents\Rutgers\Python\Election_Analysis\Resources\election_results.csv") as election_data:
+#with open(r"C:\Users\MEGHA\Documents\Rutgers\Python\Election_Analysis\Resources\election_results.csv") as election_data:
+with open(file_to_load, "r") as election_data:
     #print(election_data)
 
     # Read the file object with the reader function
@@ -64,7 +66,7 @@ with open(r"C:\Users\MEGHA\Documents\Rutgers\Python\Election_Analysis\Resources\
         candidate_votes[candidate_name] += 1
 
 # Save the results to our text file.
-with open(r"C:\Users\MEGHA\Documents\Rutgers\Python\Election_Analysis\analysis\election_analysis.txt", "w") as txt_file:
+with open(file_to_write, "w") as txt_file:
     # Print the final vote count to the terminal.
     election_results = (
         f"\nElection Results\n"
