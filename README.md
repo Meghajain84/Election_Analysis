@@ -21,12 +21,12 @@ A Colarado Board of Elections employee has been given the following tasks to com
     * Denver: 82.8% (306,055)
     * Arapahoe: 6.7% (24,801)
 
-![votes_per_county](https://github.com/Meghajain84/stock-analysis/blob/main/Resources/votes_per_county.PNG)
+![votes_per_county](https://github.com/Meghajain84/Election_Analysis/tree/main/Resources/votes_per_county.PNG)
 
 * County with the largest number of votes is (also see code snippet below):
     * Denver
 
-![county_with_most_votes](https://github.com/Meghajain84/stock-analysis/blob/main/Resources/county_with_most_votes.PNG)
+![county_with_most_votes](https://github.com/Meghajain84/Election_Analysis/tree/main/Resources/county_with_most_votes.PNG)
 
 * The candidates and coresponding votes were:
     * Charles Casper Stockham: 23.0% (85,213)
@@ -59,19 +59,20 @@ least_percentage = 100
 
 b) *changing the logic from this*:
 
+
 if (votes > winning_count) and (vote_percentage > winning_percentage):
 
-            winning_count = votes
-            winning_candidate = candidate_name
-            winning_percentage = vote_percentage
+    winning_count = votes
+    winning_candidate = candidate_name
+    winning_percentage = vote_percentage
 
 *to*:
 
 if (votes < least_count) and (vote_percentage < least_percentage):
 
-            least_count = votes
-            least_candidate = candidate_name
-            least_percentage = vote_percentage
+    least_count = votes
+    least_candidate = candidate_name
+    least_percentage = vote_percentage
 
 (2) We can use the same code with some modifications for determining the winner from the elections results of other congressional districts, senatorial and local elections. We would need election data corresponding to those.
 
