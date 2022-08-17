@@ -59,11 +59,11 @@ least_percentage = 100
 
 b) *changing the logic from this*:
 
-![winning_candidate](https://github.com/Meghajain84/Election_Analysis/blob/main/Resources/votes_per_county.PNG)
+![winning_candidate](https://github.com/Meghajain84/Election_Analysis/blob/main/Resources/winning_candidate.PNG)
 
 *to*:
 
-![least_count](https://github.com/Meghajain84/Election_Analysis/blob/main/Resources/votes_per_county.PNG)
+![least_count](https://github.com/Meghajain84/Election_Analysis/blob/main/Resources/least_count.PNG)
 
 (2) We can use the same code with some modifications for determining the winner from the elections results of other congressional districts, senatorial and local elections. We would need election data corresponding to those.
 
@@ -75,4 +75,4 @@ csv_list_to_read = ["congressional_district_1.csv", "congressional_district_2.cs
 
 (b) Then reading these in loop and use the existing 'for' inside this new 'for' loop
 
-![multiple_congressional](https://github.com/Meghajain84/Election_Analysis/blob/main/Resources/votes_per_county.PNG)
+![multiple_congressional](https://github.com/Meghajain84/Election_Analysis/blob/main/Resources/multiple_congressional.PNG)
