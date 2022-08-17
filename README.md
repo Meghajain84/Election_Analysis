@@ -59,20 +59,11 @@ least_percentage = 100
 
 b) *changing the logic from this*:
 
-
-if (votes > winning_count) and (vote_percentage > winning_percentage):
-
-    winning_count = votes
-    winning_candidate = candidate_name
-    winning_percentage = vote_percentage
+![winning_candidate](https://github.com/Meghajain84/Election_Analysis/blob/main/Resources/votes_per_county.PNG)
 
 *to*:
 
-if (votes < least_count) and (vote_percentage < least_percentage):
-
-    least_count = votes
-    least_candidate = candidate_name
-    least_percentage = vote_percentage
+![least_count](https://github.com/Meghajain84/Election_Analysis/blob/main/Resources/votes_per_county.PNG)
 
 (2) We can use the same code with some modifications for determining the winner from the elections results of other congressional districts, senatorial and local elections. We would need election data corresponding to those.
 
@@ -84,18 +75,4 @@ csv_list_to_read = ["congressional_district_1.csv", "congressional_district_2.cs
 
 (b) Then reading these in loop and use the existing 'for' inside this new 'for' loop
 
-for item in csv_list_to_read
-
-    file_to_load = os.path.join("Resources", item)
-
-    with open(file_to_load) as election_data:
-
-        reader = csv.reader(election_data)
-
-        # Read the header
-        header = next(reader)
-
-        # For each row in the CSV file.
-        for row in reader:
-
-       ....
+![multiple_congressional](https://github.com/Meghajain84/Election_Analysis/blob/main/Resources/votes_per_county.PNG)
