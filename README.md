@@ -16,12 +16,18 @@ A Colarado Board of Elections employee has been given the following tasks to com
 
 ## Election-Audit Results
 * There were **369,711** votes cast in the election.
-* Number of votes and corresponding percentage of total votes per county were:
+* Number of votes and corresponding percentage of total votes per county were:(also see code snippet below)
     * Jefferson: 10.5% (38,855)
     * Denver: 82.8% (306,055)
     * Arapahoe: 6.7% (24,801)
-* County with the largest number of votes is:
+
+![votes_per_county](https://github.com/Meghajain84/stock-analysis/blob/main/Resources/votes_per_county.PNG)
+
+* County with the largest number of votes is (also see code snippet below):
     * Denver
+
+![county_with_most_votes](https://github.com/Meghajain84/stock-analysis/blob/main/Resources/county_with_most_votes.PNG)
+
 * The candidates and coresponding votes were:
     * Charles Casper Stockham: 23.0% (85,213)
     * Diana DeGette: 73.8% (272,892)
@@ -31,9 +37,6 @@ A Colarado Board of Elections employee has been given the following tasks to com
 
 ## Election-Audit Summary
 We determined the winning candidate and county with highest number of votes in this project.
-
-We can use the same code for determining the winner from the elections results of other congressional districts, senatorial and local elections. We would need election data corresponding to those.
-
 
 ### Ways the code can be used with some modifications:
 (1) Similar to winning candidate votes, we can modify the code to find the candidate with the least number of votes. That can be achieved by
@@ -70,4 +73,28 @@ if (votes < least_count) and (vote_percentage < least_percentage):
             least_candidate = candidate_name
             least_percentage = vote_percentage
 
-(2)
+(2) We can use the same code with some modifications for determining the winner from the elections results of other congressional districts, senatorial and local elections. We would need election data corresponding to those.
+
+Suppose we have the csv files for each congressional district, we can modify the code to use for loop to read all csv files one after another and spit out the result fort each congressional district
+
+(a) We can create a list of file names 
+
+csv_list_to_read = ["congressional_district_1.csv", "congressional_district_2.csv"]
+
+(b) Then reading these in loop and use the existing 'for' inside this new 'for' loop
+
+for item in csv_list_to_read
+
+    file_to_load = os.path.join("Resources", item)
+
+    with open(file_to_load) as election_data:
+
+        reader = csv.reader(election_data)
+
+        # Read the header
+        header = next(reader)
+
+        # For each row in the CSV file.
+        for row in reader:
+
+       ....
